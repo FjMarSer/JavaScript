@@ -1,24 +1,18 @@
-document.addEventListener("DOMContentLoaded", clickImagenesSeleccionada);
+document.addEventListener("DOMContentLoaded", () =>{
 
-function clickImagenesSeleccionada() {
-    const imagenes = Array.from(document.getElementsByTagName("img"));
-    imagenes.forEach((imagen) => {
-        imagen.addEventListener("click", () => agrandarImagenesSeleccionada(imagen));
-    });
-}
+const imagenes = [];
 
-function agrandarImagenesSeleccionada(imagenSeleccionada) {
-    let contenedor = document.getElementById("contenedor");
-    if (!contenedor) {
-        contenedor = document.createElement("div");
-        contenedor.id = "contenedor";
-        contenedor.classList.add("visor");
-        document.body.appendChild(contenedor);
-    }
-    contenedor.innerHTML = " ";
-    const imagenMostrada = document.createElement("img");
-    imagenMostrada.src = imagenSeleccionada.src;
-    contenedor.appendChild(imagenMostrada);
-}
+const numerosAleatorios = generarNumAleatoriosSinRep(0, imagenes.length - 1, 3);
 
+const imagenesSeleccionadas = generarImagenesConNumeroAleatorio(imagenes, numerosAleatorios);
+
+
+console.log("Imágenes seleccionadas:", imagenesSeleccionadas);
+
+});
+// Añadir una funcion para generar numero aleatorio
+
+// Corregir el EjImagenes añadiendo las funciones anteriores.
+
+// El resultado del EjImanges, debe tener 4 funciones. clickImagenesSeleccionada, generarNumeroAleatorioSinRepertir, ponerFoto, mostrarFoto"
 
