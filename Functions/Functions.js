@@ -19,32 +19,36 @@ function generarNumAleatoriosSinRep(min = 1, max = 50, cantidad = 5) {
     return Array.from(numerosAleatorios);
 }
 
-//comprobar números (si son números,si son positivos, cantidad no mayor a max menos min, max menor que min).
-
-
 /*
- @param [Array] imagenes
- @return [Array] imagenesSelecionadas
-*/
+   @param [Array] imagenes
+   @param [Array] numerosAleatorios
+   @return [Array] imagenesSelecionadas
+ */
+function generarImagenes(imagenes, numerosAleatorios) {
+    // Filtrar las imágenes en base a los índices en numerosAleatorios
 
-function generarImagenes(imagenes) {
-    let imagenesSeleccionadas = new Set();
-
-    while (imagenesSeleccionadas.size < 5) {
-        let indiceAleatorio = Math.floor(Math.random() * imagenes.length);
-        imagenesSeleccionadas.add(imagenes[indiceAleatorio]);
-    }
-
-    return Array.from(imagenesSeleccionadas);
+    return numerosAleatorios.map(indice => imagenes[indice]);
 }
 
-function seleccionarImagen(imagenes, indices) {
-    if (!Array.isArray(indices) || indices.some(indice => indice < 0 || indice >= imagenes.length)) {
-        throw new Error("Uno o más índices están fuera del rango del array de imágenes.");
-    }
+//comprobar números (si son números,si son positivos, cantidad no mayor a max menos min, max menor que min).
 
-    const imagenesSeleccionadas = indices.map(indice => imagenes[indice]);
-    return imagenesSeleccionadas;
+/*
+   @param src de la imagen
+   @return imagen
+ */
+function mostrarImagen(src) {
+    let nodoImagen = document.createElement("img");
+    nodoImagen.setAttribute("src", src);
+    return nodoImagen;
+}
+
+/*
+    @param
+    @return contenedor
+ */
+
+function crearContenedor(){
+
 }
 
 

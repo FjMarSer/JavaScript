@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded",() => {
         }
     }
 
-
     //Actualiza el ul, primero lo borra y luego lo rellena con la informacion guardada en el array
 
     function listarEnlaces() {
